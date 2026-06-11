@@ -1,0 +1,55 @@
+{
+    "titulo": "Meus filmes favoritos",
+    "itens": [
+        {
+            "titulo": "Interstellar",
+            "genero": "Ficção Científica",
+            "ano": 2014
+        },
+        {
+            "titulo": "O Senhor dos Anéis: A Sociedade do Anel",
+            "genero": "Fantasia",
+            "ano": 2001
+        },
+        {
+            "titulo": "Matrix",
+            "genero": "Ficção Científica",
+            "ano": 1999
+        },
+        {
+            "titulo": "A Origem",
+            "genero": "Ficção Científica",
+            "ano": 2010
+        },
+        {
+            "titulo": "Gladiador",
+            "genero": "Ação",
+            "ano": 2000
+        }, 
+        {
+            "titulo": "O Poderoso Chefão",
+            "genero": "Crime",
+            "ano": 1972
+        },
+        {
+            "titulo": "Pulp Fiction",
+            "genero": "Crime",
+            "ano": 1994
+        },
+        {
+            "titulo": "O Labirinto do Fauno",
+            "genero": "Fantasia",
+            "ano": 2006
+        },
+        {
+            "titulo": "Clube da Luta",
+            "genero": "Drama",
+            "ano": 1999
+        },
+        {
+            "titulo": "A Viagem de Chihiro",
+            "genero": "Animação",
+            "ano": 2001
+        }
+    ]
+}

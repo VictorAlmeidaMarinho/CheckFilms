@@ -1,0 +1,9 @@
+services:
+  painel:
+    build: .      # monta o container a partir do Dockerfile presente na pasta atual (.)
+    container_name: app     # nome do container
+    ports:
+      - "8000:80"     # portas: "host:container"
+    volumes:
+      - ./data:/usr/share/nginx/html/data # "./data:/": caminho da pasta que será copiada e colada na pasta especificada
+    restart: unless-stopped    # container reinicia o servidor e fica parado até a inicialização manual 

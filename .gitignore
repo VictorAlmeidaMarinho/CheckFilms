@@ -1,0 +1,6 @@
+# Ignorar arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar pastas geradas pelo Docker
+.docker/
