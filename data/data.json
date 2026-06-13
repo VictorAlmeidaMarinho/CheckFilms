@@ -1,55 +1,33 @@
 {
-    "titulo": "Meus filmes favoritos",
-    "itens": [
-        {
-            "titulo": "Interstellar",
-            "genero": "Ficção Científica",
-            "ano": 2014
-        },
-        {
-            "titulo": "O Senhor dos Anéis: A Sociedade do Anel",
-            "genero": "Fantasia",
-            "ano": 2001
-        },
-        {
-            "titulo": "Matrix",
-            "genero": "Ficção Científica",
-            "ano": 1999
-        },
-        {
-            "titulo": "A Origem",
-            "genero": "Ficção Científica",
-            "ano": 2010
-        },
-        {
-            "titulo": "Gladiador",
-            "genero": "Ação",
-            "ano": 2000
-        }, 
-        {
-            "titulo": "O Poderoso Chefão",
-            "genero": "Crime",
-            "ano": 1972
-        },
-        {
-            "titulo": "Pulp Fiction",
-            "genero": "Crime",
-            "ano": 1994
-        },
-        {
-            "titulo": "O Labirinto do Fauno",
-            "genero": "Fantasia",
-            "ano": 2006
-        },
-        {
-            "titulo": "Clube da Luta",
-            "genero": "Drama",
-            "ano": 1999
-        },
-        {
-            "titulo": "A Viagem de Chihiro",
-            "genero": "Animação",
-            "ano": 2001
-        }
-    ]
+  "titulo": "Minha Lista de Filmes",
+  "itens": [
+    {
+      "titulo": "O Poderoso Chefão",
+      "genero": "Drama / Crime",
+      "ano": 1972,
+      "nota": 9.2,
+      "cartaz": "data//asseets//filmes//poderoso_chefao.webp"
+    },
+    {
+      "titulo": "Interestelar",
+      "genero": "Ficção Científica",
+      "ano": 2014,
+      "nota": 8.7,
+      "cartaz": "data//asseets//filmes//interestellar.webp"
+    },
+    {
+      "titulo": "Parasita",
+      "genero": "Thriller / Drama",
+      "ano": 2019,
+      "nota": 8.5,
+      "cartaz": "data//asseets//filmes//parasita.jpg"
+    },
+    {
+      "titulo": "Clube da Luta",
+      "genero": "Drama / Thriller",
+      "ano": 1999,
+      "nota": 8.8,
+      "cartaz": "data//asseets//filmes//clube_da_luta.webp"
+    }
+  ]
 }

@@ -4,44 +4,147 @@
   box-sizing: border-box;
 }
 
+
+/* ===================== BODY ===================== */
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: #f1f5f9;
-  color: #1e293b;
+  background-color: #fffbeb;   
+  color: #f5e6c8;               
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
 }
 
+
+/* ===================== HEADER ===================== */
 header {
-  background: #1e40af;
-  color: white;
-  padding: 24px 32px;
+  background: #cc2222;
+  font-family: 'Poppins', sans-serif;
+  color: #fff8e7;
+  font-weight: bold;
+  padding: 28px 32px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
 }
 
-main {
-  padding: 32px;
-}
-
-#lista {
+.header-inner {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   gap: 16px;
 }
 
+header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff8e7;
+}
+
+
+/* ===================== PIPOCAS DE FUNDO ===================== */
+#pipocas-fundo {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;   /* não bloqueia cliques */
+  z-index: 0;
+  overflow: hidden;
+}
+
+#pipocas-fundo span {
+  position: absolute;
+  font-size: 28px;
+  opacity: 0.40;         
+  user-select: none;
+}
+
+
+/* ===================== MAIN ===================== */
+main {
+  padding: 40px 32px;
+  position: relative;
+  z-index: 1;         /* acima das pipocas de fundo */
+}
+
+
+/* ===================== GRID DE CARDS ===================== */
+#grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* ===================== CARDS ===================== */
 .card {
-  background: white;
+  background: #2a1c0e;          
+  border: 2px solid #2a1c0e;   
   border-radius: 12px;
-  padding: 20px;
   width: 220px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  overflow: hidden;             /* garante que a imagem respeite o border-radius */
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5);
 }
 
-.card h2 {
-  font-size: 16px;
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: #ffffff;
+  box-shadow: 0 8px 24px rgba(245, 200, 66, 0.25);
+}
+
+.card:active {
+  transform: scale(0.97);
+}
+
+.card-imagem {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  background: #1a1008;          /* placeholder escuro enquanto a imagem carrega */
+}
+
+.card-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;            /* preenche o espaço sem distorcer */
+  display: block;
+  transition: transform 0.3s;
+}
+
+.card:hover .card-imagem img {
+  transform: scale(1.005);       /* zoom no cartaz ao passar o mouse */
+}
+
+.card-info {
+  padding: 16px;
+}
+
+.card-info h2 {
+  font-size: 15px;
+  font-weight: 700;
   margin-bottom: 8px;
-  color: #1e40af;
+  color: white;               
+  line-height: 1.3;
 }
 
-.card p {
-  font-size: 14px;
-  color: #475569;
+.card-info p {
+  font-size: 13px;
+  color: #c9b89a;               
   margin-bottom: 4px;
+}
+
+
+/* ===================== FOOTER ===================== */
+footer {
+  background: #cc2222;
+  color: #fff8e7;
+  padding: 28px 32px;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  z-index: 1;
 }
