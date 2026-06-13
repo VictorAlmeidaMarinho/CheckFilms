@@ -8,26 +8,42 @@
 /* ===================== BODY ===================== */
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #fffbeb;   
+  background-color: #21201f;   
   color: #f5e6c8;               
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
+  text-transform: uppercase;
+}
+
+body::after {
+  content: ''; /* vazio */
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.868) 0%,    /* escuro na base */
+    transparent      60%     /* transparente no topo */
+  );
+  pointer-events: none;
 }
 
 
+
 /* ===================== HEADER ===================== */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 header {
   background: #cc2222;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', system-ui;
   color: #fff8e7;
   font-weight: bold;
   padding: 28px 32px;
   text-align: center;
   position: relative;
   z-index: 1;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
 }
+
 
 .header-inner {
   display: flex;
@@ -52,11 +68,11 @@ header h1 {
   pointer-events: none;   /* não bloqueia cliques */
   z-index: 0;
   overflow: hidden;
+  filter: blur(2px);
 }
 
 #pipocas-fundo span {
   position: absolute;
-  font-size: 28px;
   opacity: 0.40;         
   user-select: none;
 }
@@ -64,7 +80,7 @@ header h1 {
 
 /* ===================== MAIN ===================== */
 main {
-  padding: 40px 32px;
+  padding: 70px 32px;
   position: relative;
   z-index: 1;         /* acima das pipocas de fundo */
 }

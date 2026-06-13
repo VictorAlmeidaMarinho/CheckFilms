@@ -45,8 +45,8 @@ function renderizarPainel(dados) {
         >
       </div>
       <div class="card-info">
-        <h2>${item.titulo}</h2>
-        <p>🎬 ${item.genero}</p>
+        <h2 class="card-title">${item.titulo}</h2>
+        <p class="card-genre">🎬 ${item.genero}</p>
         <p>📅 ${item.ano}</p>
         <p>⭐ ${item.nota}</p>
       </div>
