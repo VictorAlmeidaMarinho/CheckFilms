@@ -5,5 +5,5 @@ services:
     ports:
       - "8000:80"     # portas: "host:container"
     volumes:
-      - .:/usr/share/nginx/html
+      - ./data:/usr/share/nginx/html/data
     restart: unless-stopped    # container reinicia o servidor e fica parado até a inicialização manual 
