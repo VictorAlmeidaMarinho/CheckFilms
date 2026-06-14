@@ -5,7 +5,7 @@
 }
 
 
-/* ===================== BODY ===================== */
+/* --- Body --- */
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #21201f;   
@@ -14,6 +14,9 @@ body {
   position: relative;
   overflow-x: hidden;
   text-transform: uppercase;
+  /*Adicionado para portabilidade mobile*/
+  display: flex;
+  flex-direction: column;
 }
 
 body::after {
@@ -30,7 +33,7 @@ body::after {
 
 
 
-/* ===================== HEADER ===================== */
+/* --- Header --- */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 header {
@@ -61,7 +64,7 @@ header h1 {
 }
 
 
-/* ===================== PIPOCAS DE FUNDO ===================== */
+/* --- Wallpaper de pipocas --- */
 #pipocas-fundo {
   position: fixed;
   inset: 0;
@@ -78,15 +81,18 @@ header h1 {
 }
 
 
-/* ===================== MAIN ===================== */
+/* --- MAIN --- */
 main {
   padding: 70px 32px;
   position: relative;
   z-index: 1;         /* acima das pipocas de fundo */
+  /*Adicionado para portabilidade mobile*/
+  flex: 1;
+  padding-bottom: 40px;
 }
 
 
-/* ===================== GRID DE CARDS ===================== */
+/* --- GRID DE CARDS --- */
 #grid {
   display: flex;
   flex-wrap: wrap;
@@ -94,7 +100,7 @@ main {
   justify-content: center;
 }
 
-/* ===================== CARDS ===================== */
+/* --- Cards --- */
 .card {
   background: #2a1c0e;          
   border: 2px solid #2a1c0e;   
@@ -154,13 +160,126 @@ main {
 }
 
 
-/* ===================== FOOTER ===================== */
+/* --- card overlay de checklist --- */
+.card {
+  position: relative; /* card com posição relativa para o overlay se manter dentro do card */
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  backdrop-filter: blur(2px);
+  animation: fadeInOverlay 0.18s ease;
+}
+
+@keyframes fadeInOverlay {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.overlay-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.overlay-pergunta {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff8e7;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.overlay-botoes {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.overlay-botoes button {
+  padding: 9px 26px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.15s;
+}
+
+.btn-sim {
+  background: #cc2222;
+  color: #fff8e7;
+}
+
+.btn-sim:hover {
+  background: #e03030;
+  transform: scale(1.06);
+}
+
+.btn-nao {
+  background: #3a3228;
+  color: #c9b89a;
+  border: 1px solid #55473a !important;
+}
+
+.btn-nao:hover {
+  background: #4a4030;
+  transform: scale(1.06);
+}
+
+/* --- Card Filme Assistido --- */
+.card-assistido {
+  opacity: 0.52;
+  filter: grayscale(80%);
+  border-color: #444 !important;
+}
+
+.card-assistido:hover {
+  transform: none;
+  border-color: #666 !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+}
+
+.card-watched-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.72);
+  color: #a8d5a2;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.card-imagem {
+  position: relative; /* ajuste na imagem para ícone de assistido */
+}
+
+.watched-label {
+  color: #a8d5a2 !important;
+  font-weight: 700;
+}
+
+/* --- Footer --- */
 footer {
   background: #cc2222;
   color: #fff8e7;
   padding: 28px 32px;
   text-align: center;
-  position: relative;
   width: 100%;
   z-index: 1;
+  height: 4.5rem;
 }

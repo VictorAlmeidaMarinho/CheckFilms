@@ -28,6 +28,34 @@
       "ano": 1999,
       "nota": 8.8,
       "cartaz": "data//asseets//filmes//clube_da_luta.webp"
+    },
+    {
+      "titulo": "Femme Fatale",
+      "genero": "Suspense Erótico",
+      "ano": 2002,
+      "nota": 6.2,
+      "cartaz": "data//asseets//filmes//femme-fatale.jpg"
+    },
+    {
+      "titulo": "Copacabana Mon Amour",
+      "genero": "Comédia",
+      "ano": 1970,
+      "nota": 6.7,
+      "cartaz": "data//asseets//filmes//copacabana_mon_amour.jpg"
+    },
+    {
+      "titulo": "Backrooms",
+      "genero": "Terror",
+      "ano": 2026,
+      "nota": 7.1,
+      "cartaz": "data//asseets//filmes//backrooms.jpg"
+    },
+    {
+      "titulo": "Leviticus",
+      "genero": "Horror",
+      "ano": 2026,
+      "nota": "?",
+      "cartaz": "data//asseets//filmes//leviticus.jpg"
     }
   ]
 }

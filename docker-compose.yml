@@ -5,5 +5,5 @@ services:
     ports:
       - "8000:80"     # portas: "host:container"
     volumes:
-      - ./data:/usr/share/nginx/html/data # "./data:/": caminho da pasta que será copiada e colada na pasta especificada
+      - .:/usr/share/nginx/html
     restart: unless-stopped    # container reinicia o servidor e fica parado até a inicialização manual 
