@@ -37,7 +37,7 @@ body::after {
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 header {
-  background: #cc2222;
+  background: #3939BF;
   font-family: 'Bebas Neue', sans-serif;
   color: #fff8e7;
   font-weight: bold;
@@ -275,7 +275,7 @@ main {
 
 /* --- Footer --- */
 footer {
-  background: #cc2222;
+  background: #3939BF;
   color: #fff8e7;
   padding: 28px 32px;
   text-align: center;
