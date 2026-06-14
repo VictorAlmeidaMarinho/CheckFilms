@@ -34,6 +34,12 @@ function salvarWatched(titulo, valor) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(estado));
 }
 
+function removerWatched(titulo) {
+  const estado = carregarWatched();
+  delete estado[titulo];
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(estado));
+}
+
 /* --- Fetch de data.json --- */
 fetch('./data/data.json')
   .then(response => response.json())
@@ -79,11 +85,18 @@ function adicionarCard(item) {
     </div>
     <div class="card-overlay" style="display:none;">
       <div class="overlay-content">
-        <p class="overlay-pergunta">Assistiu o filme?</p>
-        <div class="overlay-botoes">
-          <button class="btn-sim">Sim</button>
-          <button class="btn-nao">Não</button>
-        </div>
+        ${item.watched
+          ? `<p class="overlay-pergunta">Desmarcar como assistido?</p>
+             <div class="overlay-botoes">
+               <button class="btn-sim btn-desmarcar">Sim</button>
+               <button class="btn-nao">Não</button>
+             </div>`
+          : `<p class="overlay-pergunta">Assistiu o filme?</p>
+             <div class="overlay-botoes">
+               <button class="btn-sim">Sim</button>
+               <button class="btn-nao">Não</button>
+             </div>`
+        }
       </div>
     </div>
   `;
@@ -91,17 +104,22 @@ function adicionarCard(item) {
   /* ---- Overlay de Checklist de Filme ---- */
   card.addEventListener('click', function (e) {
     if (e.target.closest('.btn-sim') || e.target.closest('.btn-nao')) return;
-    if (item.watched) return;
     const overlay = card.querySelector('.card-overlay');
     overlay.style.display = 'flex';
   });
 
-  // Botões "Sim" e "Não"
+  // Botão "Sim" (marcar como assistido)
   card.querySelector('.btn-sim').addEventListener('click', function (e) {
     e.stopPropagation();
-    item.watched = true;
-    salvarWatched(item.titulo, true); // Salva informação em localStorage
-
+    if (item.watched) {
+      // Desfaz: remove do localStorage e re-renderiza como não assistido
+      item.watched = false;
+      removerWatched(item.titulo);
+    } else {
+      // Marca como assistido
+      item.watched = true;
+      salvarWatched(item.titulo, true);
+    }
     card.remove();
     adicionarCard(item);
   });
